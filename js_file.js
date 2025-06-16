@@ -98,6 +98,25 @@ Clear.forEach(button => {
     })
 })
 
+//delete button
+const delButton = document.getElementById('erase');
+delButton.addEventListener('click', () => {
+    //return if nothing
+    if(screen.textContent.length === 0){return;}
+
+    const lastChar = screen.textContent.slice(-1);
+    screen.textContent = screen.textContent.slice(0, -1);
+
+    if (['+', '-', '*', '/'].includes(lastChar)) {
+        op = null;
+    }else{
+        if (op === null){
+            ls = ls.slice(0, -1);
+        }else{
+            rs = rs.slice(0, -1);
+        }
+    }
+})
 
 
 
